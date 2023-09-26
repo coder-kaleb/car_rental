@@ -1,17 +1,21 @@
 "use client";
 
+import { useState } from "react";
+import Image from "next/image";
+
+import { CustomButton } from ".";
+import CarDetails from "./CarDetails";
 import { CarProps } from "@/types";
 import { calculateCarRent, generateCarImageUrl } from "@/utils";
-import Image from "next/image";
-import { CarDetails, CustomButton } from ".";
-import { useState } from "react";
+
 interface CarCardProps {
   car: CarProps;
 }
 
 const CarCard = ({ car }: CarCardProps) => {
-  const [isOpen, setIsOpen] = useState(false);
   const { city_mpg, year, make, model, transmission, drive } = car;
+
+  const [isOpen, setIsOpen] = useState(false);
 
   const carRent = calculateCarRent(city_mpg, year);
 
@@ -52,7 +56,6 @@ const CarCard = ({ car }: CarCardProps) => {
               height={20}
               alt="steering wheel"
             />
-
             <p className="text-[14px] leading-[17px]">
               {transmission === "a" ? "Automatic" : "Manual"}
             </p>
@@ -72,8 +75,8 @@ const CarCard = ({ car }: CarCardProps) => {
             title="View More"
             containerStyles="w-full py-[16px] rounded-full bg-primary-blue"
             textStyles="text-white text-[14px] leading-[17px] font-bold"
-            handleClick={() => setIsOpen(true)}
             rightIcon="/right-arrow.svg"
+            handleClick={() => setIsOpen(true)}
           />
         </div>
       </div>
