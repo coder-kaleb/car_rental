@@ -1,4 +1,4 @@
-import { CarCard, CustomFilter, Hero, SearchBar } from "@/components";
+import { CarCard, CustomFilter, Hero, SearchBar, ShowMore } from "@/components";
 import { fuels, yearsOfProduction } from "@/constant";
 import { HomeProps } from "@/types";
 import { fetchCars } from "@/utils";
@@ -8,7 +8,7 @@ export default async function Home({ searchParams }: HomeProps) {
     manufacturer: searchParams.manufacturer || "",
     year: searchParams.year || 2022,
     fuel: searchParams.fuel || "",
-    limit: searchParams.limit || 10,
+    limit: searchParams.limit || 20,
     model: searchParams.model || "",
   });
 
@@ -19,7 +19,7 @@ export default async function Home({ searchParams }: HomeProps) {
 
       <div className=" mt-12 padding-x padding-y max-width" id="discover">
         <div className=" home__text-container">
-          <h1 className="text-4xl font-extrabold">Car Catalogue</h1>
+          <h1 className="text-5xl font-extrabold">Car Catalogue</h1>
           <p className=" text-xl">Explore out cars you might like</p>
         </div>
 
@@ -39,6 +39,12 @@ export default async function Home({ searchParams }: HomeProps) {
                 <CarCard car={car} key={index} />
               ))}
             </div>
+
+            {/* show more button */}
+            <ShowMore
+              pageNumber={(searchParams.limit || 20) / 10}
+              isNext={(searchParams.limit || 20) > allCars.length}
+            />
           </section>
         ) : (
           <div className=" home-__error-container">

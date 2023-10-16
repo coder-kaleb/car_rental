@@ -12,7 +12,7 @@ const Footer = () => {
             alt="logo"
             width={118}
             height={18}
-            className=" object-contain"
+            className=" object-contain hover:cursor-pointer"
           />
           <p className=" text-base text-gray-700">
             Carhub 2023 <br />

@@ -4,11 +4,16 @@ import Image from "next/image";
 import { CustomButton } from ".";
 
 const Hero = () => {
-  const handleScroll = () => {};
+  const handleScroll = () => {
+    const nextSection = document.getElementById("discover");
 
+    if (nextSection) {
+      nextSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
   return (
     <div className="hero">
-      <div className="flex-1 sm:pt-36 pt-20 padding-x">
+      <div className="flex-1 sm:pt-32 pt-20 padding-x">
         <h1 className="hero__title">
           Find, book, rent a car—quick and super easy!
         </h1>
@@ -21,7 +26,7 @@ const Hero = () => {
         <CustomButton
           title="Explore Cars"
           containerStyles="bg-primary-blue text-white rounded-full mt-10 text-2xl"
-          handleScroll={handleScroll}
+          handleClick={handleScroll}
         />
       </div>
 

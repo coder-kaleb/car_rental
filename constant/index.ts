@@ -99,3 +99,30 @@ export const footerLinks = [
     ],
   },
 ];
+
+export const places = [
+  { city: "New York", name: "Central Park" },
+  { city: "Los Angeles", name: "Hollywood Boulevard" },
+  { city: "Miami", name: "South Beach" },
+  { city: "Chicago", name: "Millennium Park" },
+  { city: "San Francisco", name: "Golden Gate Bridge" },
+  { city: "Las Vegas", name: "The Strip" },
+  { city: "Orlando", name: "Universal Studios" },
+  { city: "Seattle", name: "Space Needle" },
+  { city: "Boston", name: "Fenway Park" },
+  { city: "Washington D.C.", name: "National Mall" },
+];
+export const pickup = [
+  { id: 1, city: "Los Angeles", name: "Hollywood Boulevard", fName: "pickUp" },
+  { id: 2, city: "Los Angeles", name: "Griffith Observatory", fName: "pickUp" },
+  { id: 3, city: "Los Angeles", name: "Venice Beach", fName: "pickUp" },
+  { id: 4, city: "Los Angeles", name: "The Getty", fName: "pickUp" },
+  { id: 5, city: "Los Angeles", name: "Universal Studios", fName: "pickUp" },
+];
+export const dropoff = [
+  { id: 1, name: "Grand Canyon", fName: "dropOff" },
+  { id: 2, name: "Yellowstone Park", fName: "dropOff" },
+  { id: 3, name: "Niagara Falls", fName: "dropOff" },
+  { id: 4, name: "Mount Rushmore", fName: "dropOff" },
+  { id: 5, name: "Death Valley", fName: "dropOff" },
+];

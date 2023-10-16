@@ -148,7 +148,7 @@
 
 /* START: Custom Filter styles */
 .custom-filter__btn {
-  @apply relative w-full min-w-[127px] flex justify-between items-center cursor-default rounded-lg bg-white py-2 px-3 text-left shadow-md sm:text-sm border;
+  @apply relative w-full min-w-[127px] flex justify-between items-center cursor-default rounded-lg bg-white py-2 px-3 text-left shadow-md sm:text-base border;
 }
 
 .custom-filter__options {
@@ -196,7 +196,7 @@
 }
 
 .searchbar__input {
-  @apply w-full h-[48px] pl-12 p-4 bg-light-white rounded-r-full max-sm:rounded-full outline-none cursor-pointer text-sm;
+  @apply w-full h-[48px] pl-12 p-4 bg-light-white rounded-r-full max-sm:rounded-full outline-none cursor-pointer;
 }
 /* END: searchbar styles */
 
@@ -206,7 +206,7 @@
 }
 
 .search-manufacturer__input {
-  @apply w-full h-[48px] pl-12 p-4 rounded-l-full max-sm:rounded-full bg-light-white outline-none cursor-pointer text-sm;
+  @apply w-full h-[48px] pl-12 p-4 rounded-l-full max-sm:rounded-full bg-light-white outline-none cursor-pointer;
 }
 
 .search-manufacturer__options {
@@ -217,3 +217,11 @@
   @apply cursor-default select-none py-2 pl-10 pr-4;
 }
 /* END: search manufacturer styles */
+
+/* INPUT********* */
+.input-date::-webkit-calendar-picker-indicator {
+  @apply top-0 left-0 -right-3  bottom-0 absolute cursor-pointer w-auto h-auto bg-[calc(100%-1rem)] bg-[length:20px];
+}
+.input {
+  @apply w-full h-[48px] pl-2 p-3 bg-light-white rounded-md outline-none cursor-pointer;
+}

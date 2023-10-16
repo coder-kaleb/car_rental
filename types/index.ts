@@ -1,4 +1,4 @@
-import { MouseEventHandler } from "react";
+import { Dispatch, MouseEventHandler, SetStateAction } from "react";
 
 export interface CarProps {
   city_mpg: number;
@@ -65,4 +65,22 @@ export interface ShowMoreProps {
 export interface SearchManuFacturerProps {
   manufacturer: string;
   setManuFacturer: (manufacturer: string) => void;
+}
+
+export interface BookCarProps {
+  isOpen: boolean;
+  setIsOpen: (isBook: boolean) => void;
+  imgGen: string;
+}
+
+export interface Place {
+  id: number;
+  name: string;
+  city?: string;
+  fName: string;
+}
+export interface Places {
+  places: Place;
+  setPlaces: any;
+  options: Place[];
 }

@@ -31,7 +31,7 @@ const Navbar = () => {
         ) : (
           <FiLogOut
             onClick={() => signOut()}
-            className=" absolute right-3 sm:right-6 w-9 h-9 xl:text-white xl:top-4 top-2 hover:cursor-pointer text-primary-blue"
+            className=" absolute right-3 sm:right-16 w-9 h-9 xl:text-white xl:top-4 top-2 hover:cursor-pointer text-primary-blue"
           />
         )}
       </nav>

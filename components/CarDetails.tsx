@@ -7,6 +7,8 @@ import { Dialog, Transition } from "@headlessui/react";
 import { generateCarImageUrl } from "@/utils";
 import { CarProps } from "@/types";
 import { PuffLoader } from "react-spinners";
+import { CustomButton } from ".";
+import BookCar from "./BookCar";
 
 interface CarDetailsProps {
   isOpen: boolean;
@@ -19,6 +21,7 @@ const CarDetails = ({ isOpen, closeModal, car }: CarDetailsProps) => {
   const [displayedImage, setDisplayedImage] = useState(
     generateCarImageUrl(car)
   );
+  const generatedCarImage = generateCarImageUrl(car);
 
   // loading state
   const [loading, setLoading] = useState(false);
@@ -30,6 +33,8 @@ const CarDetails = ({ isOpen, closeModal, car }: CarDetailsProps) => {
       setLoading(false);
     }, 400);
   }, [displayedImage]);
+
+  const [isBook, setIsBook] = useState(false);
 
   return (
     <>
@@ -155,6 +160,17 @@ const CarDetails = ({ isOpen, closeModal, car }: CarDetailsProps) => {
                       ))}
                     </div>
                   </div>
+                  <CustomButton
+                    title="Book a Car"
+                    btnType="button"
+                    containerStyles="bg-primary-blue rounded-full text-white text-xl font-semibold hover:shadow-xl shadow-md ease-in-out transition-shadow duration-500 shadow-blue-500/50 tracking-wide"
+                    handleClick={() => setIsBook(true)}
+                  />
+                  <BookCar
+                    isOpen={isBook}
+                    setIsOpen={setIsBook}
+                    imgGen={generatedCarImage}
+                  />
                 </Dialog.Panel>
               </Transition.Child>
             </div>
